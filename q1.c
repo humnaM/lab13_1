@@ -16,6 +16,7 @@ int main(int argc, char **argv)
         for(int i=0;i<100;i++){
                 sdata[i]=i;
         }
+     struct
         sdata[100]=99;
 	MPI_Send(sdata, 101, MPI_CHAR, 1,99, MPI_COMM_WORLD);
         sleep(2);
