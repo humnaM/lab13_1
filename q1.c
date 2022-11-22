@@ -4,9 +4,9 @@
 
 int main(int argc, char **argv)
 {
-    int rank; 
-    MPI_Init(&argc, &argv);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    int _rank; 
+    MPI_Init(&argc, &argv);  //bye
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank); //hello
     //printf("Hello from %d\n",rank);
         printf("\nCreating an array of 100 and choosing 99 a number to search a>
     if (rank == 0)
@@ -16,14 +16,8 @@ int main(int argc, char **argv)
         for(int i=0;i<100;i++){
                 sdata[i]=i;
         }
-     struct
-	     hello world
-	     hi
-	     bye
-	     hello
-	     bye
 	     
-        sdata[100]=99;
+        _sdata[100]=99;
 	MPI_Send(sdata, 101, MPI_CHAR, 1,99, MPI_COMM_WORLD);
         sleep(2);
         MPI_Recv(recievedata, 2, MPI_CHAR, 1, 99, MPI_COMM_WORLD,&status);
@@ -34,7 +28,7 @@ printf("\nThe number recieved is: \n");
     } 
     else if (rank==1)
      {  
-        char rdata[]="";
+        char _rdata[]="";
         char senddata[]="";
         MPI_Status status;
         int totalRec=0;
